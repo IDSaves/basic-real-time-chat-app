@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Public</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.1.0/socket.io.js"></script>
+</head>
+<body>
+  <br />
+  <div class="container" id="mario-chat">
+    <div class="online-counter" id="online"></div>
+    <div class="container-fluid" id="online-list"></div>
+    <div class="container-fluid card" id="chat-window">
+      <div class="container-fluid card-body" id="output"></div>
+    </div>
+    <br />
+    <input type="text" class="form-control" id="nick" placeholder="nick" />
+    <br />
+    <input type="text" class="form-control" id="message" placeholder="message" />
+    <br />
+    <button class="btn btn-light" id="send">Send</button>
+  </div>
+  <script src="/chat.js"></script>
+</body>
+</html>
