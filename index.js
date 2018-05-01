@@ -18,13 +18,16 @@ io.on('connection', function(socket){
   console.log(online);
   users.push(socket.id);
   io.sockets.emit('online', {
-    users: users.toString(),
+    users: users,
     online: online
   });
   console.log(users);
 
   socket.on('chat', function(data){
-    io.sockets.emit('chat', data);
+    io.sockets.emit('chat', {
+      user: socket.id,
+      message: data
+    });
   });
 
   socket.on('disconnect', function(){
@@ -34,7 +37,7 @@ io.on('connection', function(socket){
     var pos = users.indexOf(socket.id);
     users.splice(pos, 1);
     io.sockets.emit('online', {
-      users: users.toString(),
+      users: users,
       online: online
     });
     console.log(users);
